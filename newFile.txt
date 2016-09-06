@@ -1,0 +1,1 @@
+This is an example to read files using node js so happy to start learning this language next its ecma script 6 with babel
