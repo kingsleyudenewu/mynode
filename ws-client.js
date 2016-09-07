@@ -1,4 +1,17 @@
-var ws = new WebSocket('ws://localhost:3000');
+var ws = new WebSocket('ws://localhost:3000/view/web_socket.html');
+
+ws.onopen = function(){
+    setTitle('Connected to cyber chat');
+};
+
+ws.onclose = function(){
+    setTitle('DISCONNECTED');
+};
+
+ws.onmessage = function(payload){
+    printMessage(payload.data);
+};
+
 document.forms[0].onsubmit = function () {
     var input = document.getElementById('message');
     input.value = '';
