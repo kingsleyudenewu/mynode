@@ -6,5 +6,4 @@ describe('printName()', function(){
         var results = tools.printName({first:'Kingsley', last:'Udenewu'});
         expect(results).to.equal('Kingsley Udenewu');
     });
-
 });
