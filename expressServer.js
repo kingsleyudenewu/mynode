@@ -1,6 +1,7 @@
 var  express  = require('express');
 var app = express();
 var cors = require('cors');
+
 //Body passer helps post data that is posted to the api
 var bodyParser = require('body-parser');
 
@@ -30,6 +31,7 @@ app.use(function(req, res, next){
 
 app.use(express.static('./express_public'));
 
+
 app.use(cors());
 
 //This is to fet data from the dictionary api
@@ -49,6 +51,11 @@ app.delete('/disctionary-api/:term', function(req, res){
    });
 
     res.json(skierTerms);
+});
+
+//Here we are going to pass parameters as a query string
+app.get('/person/:id', function(req, res){
+    res.send({req.query.qstr, req.params.id});
 });
 
 app.listen(3000);

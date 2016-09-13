@@ -31,4 +31,4 @@ http.createServer(function(req, res){
         res.end('404 file not found');
     }
 }).listen(3000);
-console.log('file server running');
+console.log('file server ru nning');
